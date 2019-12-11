@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/person/index",
+    "pages/square/index",
+    "pages/index/index",
+    "pages/send/index",
+    "pages/userConsole/userConsole",
+    "pages/storageConsole/storageConsole",
+    "pages/databaseGuide/databaseGuide",
+    "pages/addFunction/addFunction",
+    "pages/deployFunctions/deployFunctions",
+    "pages/chooseLib/chooseLib",
+    "pages/openapi/openapi",
+    "pages/openapi/serverapi/serverapi",
+    "pages/openapi/callback/callback",
+    "pages/openapi/cloudid/cloudid",
+    "pages/im/im",
+    "pages/im/room/room"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/square/index",
+        "text": "广场",
+        "iconPath": "images/home_icon/square.png",
+        "selectedIconPath": "images/home_icon/square_selected.png"
+      },
+      {
+        "pagePath": "pages/send/index",
+        "text": "发布",
+        "iconPath": "images/home_icon/send.png",
+        "selectedIconPath": "images/home_icon/send_selected.png"
+      },
+      {
+        "pagePath": "pages/person/index",
+        "text": "我的",
+        "iconPath": "images/home_icon/person.png",
+        "selectedIconPath": "images/home_icon/person_selected.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的",
+        "iconPath": "images/home_icon/person.png",
+        "selectedIconPath": "images/home_icon/person_selected.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

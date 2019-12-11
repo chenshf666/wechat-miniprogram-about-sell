@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="uploader">
+    <input placeholder="输入>=6个字符才能上传" bindinput="updateInputValue">
+    </input>
+  </view>
+
+  <view class="uploader">
+    <view class="uploader-text" bindtap="doChoose">
+      <text>选择图片</text>
+    </view>
+    <view class="uploader-container" wx:if="{{imageChoose}}">
+      <image class="uploader-image" src="{{imageUrl}}" mode="aspectFit" bindtap="previewImg"></image>
+    </view>
+  </view>
+
+  <view class="uploader">
+    <view class="uploader-text" bindtap="doSend">
+      <text>上传</text>
+    </view>
+  </view>
+
+</view>

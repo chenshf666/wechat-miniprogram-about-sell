@@ -1,0 +1,20 @@
+  <!-- 查询记录 -->
+  <view class="guide">
+    <button size="mini" type="default" bindtap="onQuery">查询记录</button>
+    <!--<text class="code" wx:if="{{queryResult}}">{{queryResult}}</text>-->
+    <view wx:if="{{queryResult}}" wx:for="{{result_array}}">
+      <view class="userinfo">
+        <button 
+          class="userinfo-avatar"
+          style="background-image: url({{item.head}})"
+          size="default"
+        ></button>
+
+        <view class="userinfo-nickname-wrapper">
+          <button class="userinfo-nickname" bindtap="test">{{item.nick}}</button>
+        </view>
+      </view>
+      <text>{{item.info}}</text>
+      <image src="{{item.url}}" mode="aspectFit"></image>
+    </view>
+  </view>
