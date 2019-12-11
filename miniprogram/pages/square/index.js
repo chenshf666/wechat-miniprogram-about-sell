@@ -17,6 +17,11 @@ Page({
       })
     }
   },
+  onImageTap(e) {
+    wx.previewImage({
+      urls: [e.target.dataset.fileid],
+    })
+  },
   test: function(event){
     const target_openid = event.currentTarget.dataset.openid
     if(target_openid == app.globalData.openid){

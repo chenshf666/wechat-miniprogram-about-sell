@@ -15,6 +15,6 @@
         </view>
       </view>
       <text>{{item.info}}</text>
-      <image src="{{item.url}}" mode="aspectFit"></image>
+      <image src="{{item.url}}" mode="aspectFit" bindtap="onImageTap" data-fileid="{{item.url}}"></image>
     </view>
   </view>
