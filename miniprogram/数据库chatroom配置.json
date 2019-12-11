@@ -1,0 +1,4 @@
+{
+  "read": "get(`database.openid2groupid.${doc.groupId}`).another_openid == auth.openid || get(`database.openid2groupid.${doc.groupId}`)._openid == auth.openid",
+  "write": "doc._openid == auth.openid"
+}
