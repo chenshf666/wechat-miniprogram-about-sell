@@ -24,7 +24,6 @@ Page({
     let thisFile = this
     wx.chooseImage({
       count: 1,
-      sizeType: ['compressed'],
       sourceType: ['album', 'camera'],
       success: function (res) {
         const filePath = res.tempFilePaths[0]
