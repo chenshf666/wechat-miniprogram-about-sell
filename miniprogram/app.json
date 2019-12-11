@@ -2,6 +2,8 @@
   "pages": [
     "pages/person/index",
     "pages/square/index",
+    "pages/room/index",
+    "pages/chat/room",
     "pages/index/index",
     "pages/send/index",
     "pages/userConsole/userConsole",
@@ -39,13 +41,13 @@
         "selectedIconPath": "images/home_icon/send_selected.png"
       },
       {
-        "pagePath": "pages/person/index",
-        "text": "我的",
-        "iconPath": "images/home_icon/person.png",
-        "selectedIconPath": "images/home_icon/person_selected.png"
+        "pagePath": "pages/room/index",
+        "text": "聊天",
+        "iconPath": "images/home_icon/room.png",
+        "selectedIconPath": "images/home_icon/room_selected.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/person/index",
         "text": "我的",
         "iconPath": "images/home_icon/person.png",
         "selectedIconPath": "images/home_icon/person_selected.png"

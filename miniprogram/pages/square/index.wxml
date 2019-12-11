@@ -11,7 +11,7 @@
         ></button>
 
         <view class="userinfo-nickname-wrapper">
-          <button class="userinfo-nickname" bindtap="test">{{item.nick}}</button>
+          <button class="userinfo-nickname" bindtap="test" data-openid="{{item._openid}}">{{item.nick}}</button>
         </view>
       </view>
       <text>{{item.info}}</text>

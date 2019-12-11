@@ -1,0 +1,8 @@
+  <!-- 查询记录 -->
+  <view class="guide">
+    <button size="mini" type="default" bindtap="onQuery">查询已有聊天</button>
+    <!--<text class="code" wx:if="{{queryResult}}">{{queryResult}}</text>-->
+    <view wx:if="{{queryResult}}" wx:for="{{result_array}}">
+      <view class="userinfo"><text bindtap="toChat" data-roomid="{{item.roomid}}">{{item.roomid}}</text></view>
+    </view>
+  </view>
