@@ -26,12 +26,12 @@ Page({
   onQuery: function () {
     const db = wx.cloud.database()
     const _ = db.command
-    db.collection('openid2roomid').where(_.or([
+    db.collection('openid2groupid').where(_.or([
       {
-        openid1: app.globalData.openid,
+        _openid: app.globalData.openid,
       },
       {
-        openid2: app.globalData.openid,
+        another_openid: app.globalData.openid,
       }
     ])).get({
       success: res => {

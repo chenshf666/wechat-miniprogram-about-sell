@@ -37,29 +37,28 @@ Page({
     const _ = db.command
     let result = []
     let roomid = ''
-    db.collection('openid2roomid').where(_.or([
+    db.collection('openid2groupid').where(_.or([
       {
-        openid1:app.globalData.openid,
-        openid2:target_openid
+      _openid:target_openid,
+      another_openid:app.globalData.openid
       },
       {
-        openid2: app.globalData.openid,
-        openid1: target_openid
+        _openid: app.globalData.openid,
+        another_openid: target_openid
       }
-      ])).get({
+    ])).get({
       success: res => {
         result = res.data
+        console.log(res.data)
         if (result.length < 1) {
           //如果没有创建则创建记录，roomid为两个openid相加
-          db.collection('openid2roomid').add({
+          db.collection('openid2groupid').add({
             data: {
-              openid1: app.globalData.openid,
-              openid2: target_openid,
-              roomid: app.globalData.openid + target_openid
+              another_openid: target_openid
             },
             success: res => {
-              roomid = app.globalData.openid + target_openid
-              app.globalData.roomid = roomid
+              console.log(res._id)
+              app.globalData.roomid = res._id
               wx.navigateTo({
                 url: '../chat/room',
               })
@@ -68,11 +67,10 @@ Page({
             }
           })
         } else {
-          roomid = result[0].roomid
-          app.globalData.roomid = roomid
-          wx.navigateTo({
-            url: '../chat/room',
-          })
+            app.globalData.roomid = result[0]._id
+            wx.navigateTo({
+              url: '../chat/room',
+            })
         }
       },
       fail: err => {
