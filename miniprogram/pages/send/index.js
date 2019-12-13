@@ -8,7 +8,8 @@ Page({
     logged: false,
     takeSession: false,
     requestResult: '',
-    input_value:'请输入',
+    input_value:'主题',
+    input_value2:'内容',
     imageChoose: false,
     imageUrl:''
   },
@@ -18,6 +19,11 @@ Page({
   updateInputValue:function(res){
     this.setData({
       input_value:res.detail.value
+    })
+  },
+  updateInputValue2: function (res) {
+    this.setData({
+      input_value2: res.detail.value
     })
   },
   doChoose: function(){
@@ -63,7 +69,7 @@ Page({
       cloudPath,
       filePath,
       success: res => {
-        thisFile.onAdd(this.data.input_value,res.fileID,app.globalData.userInfo)
+        thisFile.onAdd(this.data.input_value,this.data.input_value2,res.fileID,app.globalData.userInfo)
         app.globalData.fileID = res.fileID
         app.globalData.cloudPath = cloudPath
         app.globalData.imagePath = filePath
@@ -80,12 +86,13 @@ Page({
       }
     })
   },
-  onAdd: function (info, url, userInfo) {
+  onAdd: function (info,info2, url, userInfo) {
     console.log(Date.now())
     const db = wx.cloud.database()
     db.collection('square').add({
       data: {
         info:info,
+        info2:info2,
         url: url,
         nick:userInfo.nickName,
         head: userInfo.avatarUrl

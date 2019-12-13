@@ -22,6 +22,14 @@ Page({
       urls: [e.target.dataset.fileid],
     })
   },
+  todetail:function(event){
+    app.globalData.picccc = event.currentTarget.dataset.url;
+    app.globalData.input1111 = event.currentTarget.dataset.info;
+    app.globalData.input2222 = event.currentTarget.dataset.info2;
+    wx.navigateTo({
+      url: '../detail/detail',
+    })
+  },
   test: function(event){
     const target_openid = event.currentTarget.dataset.openid
     if(target_openid == app.globalData.openid){
@@ -94,6 +102,15 @@ Page({
         })
       }
     })
-  }
-
+  },
+  onPullDownRefresh: function () {
+    　　　wx.showNavigationBarLoading() //在标题栏中显示加载
+    　　　　//模拟加载  1秒
+    　　　　setTimeout(function () {
+      // complete
+      　　　　wx.hideNavigationBarLoading() //完成停止加载
+      　　　　wx.stopPullDownRefresh() //停止下拉刷新
+    },
+      1000);
+  },
 })

@@ -1,10 +1,13 @@
 <!--index.wxml-->
 <view class="container">
   <view class="uploader">
-    <input placeholder="输入>=6个字符才能上传" bindinput="updateInputValue">
+    <input placeholder="标题（>=6个字符）" bindinput="updateInputValue">
     </input>
   </view>
-
+<view class="uploader">
+    <input placeholder="详细描述（选填）" bindinput="updateInputValue2">
+    </input>
+  </view>
   <view class="uploader">
     <view class="uploader-text" bindtap="doChoose">
       <text>选择图片</text>

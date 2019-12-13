@@ -37,6 +37,10 @@ App({
     }
     
 
-    this.globalData = {}
+    this.globalData = {
+      picccc: '',
+      input1111: '',
+      input2222: ''
+    }
   }
 })

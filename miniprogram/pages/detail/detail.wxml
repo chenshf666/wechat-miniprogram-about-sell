@@ -1,0 +1,6 @@
+  <!-- 查询记录 -->
+  <view class="guide">
+    <image src="{{url}}" mode="aspectFit" bindtap="onImageTap" data-fileid="{{url}}"></image>
+    <text>{{title}}</text>
+    <text>{{content}}</text>
+  </view>
