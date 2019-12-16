@@ -35,6 +35,8 @@ App({
     
 
     this.globalData = {
+      logged:false, //于person页面更新，表示用户是否已经同意授予头像和昵称
+      userInfo: '',  //于person页面更新，用户同意授予头像和昵称后，得到这个对象，userInfo.avatarUrl是头像链接，nickName是昵称
       picccc: '',
       input1111: '',
       input2222: ''
