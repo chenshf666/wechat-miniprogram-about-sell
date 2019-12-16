@@ -3,20 +3,11 @@ const app = getApp()
 
 Page({
   data: {
-    avatarUrl: './user-unlogin.png',
+    avatarUrl: '',
     userInfo: {},
     logged: false,
     takeSession: false,
     requestResult: ''
-  },
-  test: function(){
-    wx.authorize({
-      scope: 'scope.userInfo',
-      success() {
-        // 用户已经同意小程序使用录音功能，后续调用 wx.startRecord 接口不会弹窗询问
-        wx.startRecord()
-      }
-    })
   },
   toMy: function(){
     wx.navigateTo({
@@ -24,15 +15,6 @@ Page({
     })
   },
   onLoad: function () {
-    let thisFile = this
-    this.onGetOpenid()
-    if (!wx.cloud) {
-      wx.redirectTo({
-        url: '../chooseLib/chooseLib',
-      })
-      return
-    }
-
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -55,7 +37,6 @@ Page({
   },
 
   onGetUserInfo: function (e) {
-
     if (!this.data.logged && e.detail.userInfo) {
       app.globalData.logged = true
       app.globalData.userInfo = e.detail.userInfo
@@ -65,27 +46,5 @@ Page({
         userInfo: e.detail.userInfo
       })
     }
-  },
-
-  onGetOpenid: function () {
-    // 调用云函数
-    wx.cloud.callFunction({
-      name: 'login',
-      data: {},
-      success: res => {
-        console.log('[云函数] [login] user openid: ', res.result.openid)
-        app.globalData.openid = res.result.openid
-        //wx.navigateTo({
-        //  url: '../userConsole/userConsole',
-        //})
-      },
-      fail: err => {
-        console.error('[云函数] [login] 调用失败', err)
-        wx.navigateTo({
-          url: '../deployFunctions/deployFunctions',
-        })
-      }
-    })
   }
-
 })
