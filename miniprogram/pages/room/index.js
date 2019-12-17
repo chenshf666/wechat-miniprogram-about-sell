@@ -50,8 +50,8 @@ Page({
       }
     })
   },
+  //获取聊天对象的头像和昵称
   GetOthersUserInfo: function(){
-    console.log('In getother')
     const db = wx.cloud.database()
     for(var i = 0; i < this.data.result_array.length; i++){
       let _index = i 
@@ -72,6 +72,17 @@ Page({
       })
     }
     
+  },
+  onPullDownRefresh: function () {
+    　　　wx.showNavigationBarLoading() //在标题栏中显示加载
+    　　　　//模拟加载  1秒
+    　　　　setTimeout(function () {
+              // complete
+      　　　　wx.hideNavigationBarLoading() //完成停止加载
+      　　　　wx.stopPullDownRefresh() //停止下拉刷新
+              },
+            500);
+            this.onQuery()
   }
 
 })
