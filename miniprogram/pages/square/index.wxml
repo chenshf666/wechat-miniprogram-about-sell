@@ -1,7 +1,6 @@
   <!-- 查询记录 -->
-  <view class="guide">
+  <view>
     <button size="mini" type="default" bindtap="onQuery">find something</button>
-    <!--<text class="code" wx:if="{{queryResult}}">{{queryResult}}</text>-->
     <view wx:if="{{queryResult}}" wx:for="{{result_array}}">
       <view class="userinfo">
         <button 
