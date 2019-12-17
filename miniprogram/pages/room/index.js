@@ -6,7 +6,8 @@ Page({
 
   data: {
     openid: '',
-    result_array:[]
+    result_array:[],
+    id2userInfo:{}
   },
   onLoad: function (options) {
     if (app.globalData.openid) {
@@ -43,10 +44,34 @@ Page({
         this.setData({
           result_array: res.data
         })
+        this.GetOthersUserInfo()
       },
       fail: err => {
       }
     })
+  },
+  GetOthersUserInfo: function(){
+    console.log('In getother')
+    const db = wx.cloud.database()
+    for(var i = 0; i < this.data.result_array.length; i++){
+      let _index = i 
+      let _openid = this.data.result_array[_index]._openid
+      if(app.globalData.openid == _openid){
+        _openid = this.data.result_array[_index].another_openid
+      }
+      let tmp = 'id2userInfo.'+this.data.result_array[_index]._id
+      db.collection('openid2userInfo').where({
+        _openid : _openid
+      }).get({
+        success: res => {
+          this.setData({[tmp]:res.data[0]})
+        },
+        fail: res=>{
+          console.log(res)
+        }
+      })
+    }
+    
   }
 
 })
