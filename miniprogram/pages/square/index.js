@@ -16,6 +16,7 @@ Page({
         openid: app.globalData.openid
       })
     }
+    this.onQuery()
   },
   onImageTap(e) {
     wx.previewImage({
@@ -91,7 +92,7 @@ Page({
     db.collection('square').get({
       success: res => {
         this.setData({
-          result_array:res.data,
+          result_array:res.data.reverse(),
           queryResult: JSON.stringify(res.data, null, 2)
         })
       },
@@ -112,5 +113,6 @@ Page({
       　　　　wx.stopPullDownRefresh() //停止下拉刷新
     },
       1000);
+      this.onQuery()
   },
 })
