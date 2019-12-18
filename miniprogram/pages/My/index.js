@@ -64,7 +64,7 @@ Page({
   },
   onDeleteFile: function(fileid){
     wx.cloud.deleteFile({
-      fileList: [fileid],
+      fileList: [...fileid],
       success: res => {
         // handle success
         console.log(res.fileList)
