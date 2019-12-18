@@ -10,7 +10,7 @@ Page({
     requestResult: '',
     input_value:'请输入',
     imageChoose: false,
-    imageUrl:''
+    imageUrl:'',
   },
   test: function(){
     console.log(this.data.input_value)
