@@ -18,6 +18,34 @@ Page({
     }
     this.onQuery()
   },
+
+  doSearch: function (e) {
+    const db = wx.cloud.database()
+    db.collection('square').where({     //实现模糊查询
+      info:{
+        $regex: '.*' + e + '.*',
+        $options: 'i'
+      }
+    }).get({
+      success: res => {
+        this.setData({
+          result_array:res.data,
+          queryResult: JSON.stringify(res.data, null, 2)
+        })
+      },
+      fail: err => {
+        wx.showToast({
+          icon: 'none',
+          title: '查询记录失败'
+        })
+      }
+    })
+  },
+
+  inputSearch: function (e) {
+    this.doSearch(e.detail.value)
+  },
+
   onImageTap(e) {
     wx.previewImage({
       urls: [e.target.dataset.fileid],

@@ -1,6 +1,16 @@
   <!-- 查询记录 -->
   <view>
-    <button size="mini" type="default" bindtap="onQuery">find something</button>
+
+    <view class="header">
+      <view class="search">
+        <image class="icon" src="/images/index/.png"/>
+        <input bindinput="inputSearch" placeholder="输入旧物名称" auto-focus/>
+      </view>
+      <button class="yellow {{searchWords.length?'':'disabled'}}" size="mini" hover-class="hover" loading="" plain="" disabled="{{!searchWords.length}}"
+      bindtap="doSearch">搜索
+      </button>
+    </view>
+
     <view wx:if="{{queryResult}}" wx:for="{{result_array}}">
       <view class="userinfo">
         <button 
