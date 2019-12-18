@@ -151,3 +151,84 @@ page {
   line-height: 36rpx;
   word-break: break-all;
 }
+
+.weui-uploader {
+	flex: 1
+}
+
+
+.weui-uploader__bd {
+	margin-bottom: -8px;
+	margin-right: -8px;
+	overflow: hidden
+}
+
+.weui-uploader__file {
+	float: left;
+	margin-right: 8px;
+	margin-bottom: 8px
+}
+
+.weui-uploader__img {
+	display: block;
+	width: 96px;
+	height: 96px
+}
+
+
+
+.weui-uploader__file-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #FFFFFF
+}
+
+.weui-uploader__input-box {
+	float: left;
+	position: relative;
+	margin-right: 8px;
+	margin-bottom: 8px;
+	width: 96px;
+	height: 96px;
+	box-sizing: border-box;
+	background-color: #EDEDED
+}
+
+.weui-uploader__input-box:before,.weui-uploader__input-box:after {
+	content: " ";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #A3A3A3
+}
+
+.weui-uploader__input-box:before {
+	width: 2px;
+	height: 32px
+}
+
+.weui-uploader__input-box:after {
+	width: 32px;
+	height: 2px
+}
+
+.weui-uploader__input-box:active {
+	border-color: #8b8b8b
+}
+
+.weui-uploader__input-box:active:before,.weui-uploader__input-box:active:after {
+	background-color: #8b8b8b
+}
+
+.weui-uploader__input {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0
+}

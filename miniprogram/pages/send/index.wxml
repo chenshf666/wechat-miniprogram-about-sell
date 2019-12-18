@@ -7,38 +7,45 @@
   <view class="uploader">
     <input placeholder="详细描述（选填）" bindinput="updateInputValue2">
     </input>
-  </view>
-  <view class="uploader">
-    <view class="uploader-text" bindtap="doChoose">
-      <text>选择图片</text>
-    </view>
-    <view class="uploader-container" wx:if="{{imageChoose}}">
-      <image class="uploader-image" src="{{imageUrl}}" mode="aspectFit" bindtap="previewImg"></image>
-    </view>
-  </view>
-<view class="page">
-    <view class="page__bd">
-        <mp-cells>
-            <mp-cell>
-                <mp-uploader 
-                  bindfail="uploadError" 
-                  bindsuccess="uploadSuccess" 
-                  select="{{selectFile}}" 
-                  files="{{files}}" 
-                  delete='true'
-                  max-count="9" 
-                  title="图片上传" tips="图片上传提示">
-                </mp-uploader>
-            </mp-cell>
-        </mp-cells>
-    </view>
-</view>
 
+
+  </view>
+    <view class="weui-uploader">
+    <view class="weui-uploader__bd">
+        <view class="weui-uploader__files">
+            <block wx:for="{{filePaths}}" wx:key="*this">
+                <view class="weui-uploader__file" data-index="{{index}}" bindtap="previewImage">
+                    <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                </view>
+            </block>
+            
+        </view>
+        <view wx:if="{{filePaths.length < max_count}}" class="weui-uploader__input-box">
+            <view class="weui-uploader__input" bindtap="doChoose"></view>
+        </view>
+    </view>
+  </view>
+  <mp-gallery 
+    hide-on-click="{{true}}" 
+    show-delete="{{true}}" 
+    show="{{showPreview}}" 
+    binddelete="deletePic" 
+    img-urls="{{filePaths}}" 
+    current="{{previewCurrent}}">
+  </mp-gallery>
+  
 
   <view class="uploader">
     <view class="uploader-text" bindtap="doSend">
       <text>上传</text>
     </view>
   </view>
+
+
+
+
+
+
+
 
 </view>
