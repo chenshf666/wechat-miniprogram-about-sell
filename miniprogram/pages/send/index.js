@@ -11,7 +11,7 @@ Page({
     input_value:'主题',
     input_value2:'内容',
     imageChoose: false,
-    imageUrl:''
+    imageUrl:'',
   },
   test: function(){
     console.log(this.data.input_value)
