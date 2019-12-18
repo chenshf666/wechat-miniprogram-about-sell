@@ -4,7 +4,7 @@
     <input placeholder="标题（>=6个字符）" bindinput="updateInputValue">
     </input>
   </view>
-<view class="uploader">
+  <view class="uploader">
     <input placeholder="详细描述（选填）" bindinput="updateInputValue2">
     </input>
   </view>
@@ -16,6 +16,24 @@
       <image class="uploader-image" src="{{imageUrl}}" mode="aspectFit" bindtap="previewImg"></image>
     </view>
   </view>
+<view class="page">
+    <view class="page__bd">
+        <mp-cells>
+            <mp-cell>
+                <mp-uploader 
+                  bindfail="uploadError" 
+                  bindsuccess="uploadSuccess" 
+                  select="{{selectFile}}" 
+                  files="{{files}}" 
+                  delete='true'
+                  max-count="9" 
+                  title="图片上传" tips="图片上传提示">
+                </mp-uploader>
+            </mp-cell>
+        </mp-cells>
+    </view>
+</view>
+
 
   <view class="uploader">
     <view class="uploader-text" bindtap="doSend">

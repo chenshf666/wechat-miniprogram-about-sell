@@ -10,11 +10,32 @@ Page({
     id2userInfo:{}
   },
   onLoad: function (options) {
+    this.test()
     if (app.globalData.openid) {
       this.setData({
         openid: app.globalData.openid
       })
     }
+  },
+  test(){
+    const db = wx.cloud.database()
+    const _ = db.command
+    const watcher = db.collection('openid2groupid').where(_.or([
+      {
+        _openid: app.globalData.openid,
+      },
+      {
+        another_openid: app.globalData.openid,
+      }
+    ])).watch({
+      onChange: function(snapshot) {
+        console.log('snapshot', snapshot)
+      },
+      onError: function(err) {
+        console.error('the watch closed because of error', err)
+      }
+    })
+
   },
   onShow: function () {
     // 页面出现在前台时执行
