@@ -29,11 +29,15 @@ Page({
     let x = this.data.item_nums + 20
     console.log(x)
     let old_data = this.data.result_array
-    db.collection('square').skip(x) // 限制返回数量为 20 条
+    db.collection('square').orderBy('time','desc').skip(x) // 限制返回数量为 20 条 //orderBy('time','desc')
       .get({
         success: res => {
+          var tmp_array = old_data.concat(res.data)
+          tmp_array.sort(function(x, y){
+            return y['time'].localeCompare(x['time'])
+          })
           this.setData({
-            result_array: old_data.concat(res.data),
+            result_array: tmp_array,
             item_nums : x,
             queryResult: JSON.stringify(res.data, null, 2)
           })
@@ -46,8 +50,7 @@ Page({
         }
       })
   },
-
-
+  
   doSearch: function (e) {
     const db = wx.cloud.database()
     db.collection('square').where({     //实现模糊查询
@@ -55,7 +58,7 @@ Page({
         $regex: '.*' + e + '.*',
         $options: 'i'
       }
-    }).get({
+    }).orderBy('time','desc').get({
       success: res => {
         this.setData({
           result_array:res.data,
@@ -146,10 +149,13 @@ Page({
   },
   onQuery: function () {
     const db = wx.cloud.database()
-    db.collection('square').get({
+    db.collection('square').orderBy('time','desc').get({
       success: res => {
+        res.data.sort(function(x, y){
+          return y['time'].localeCompare(x['time'])
+        })
         this.setData({
-          result_array:res.data.reverse(),
+          result_array:res.data,
           queryResult: JSON.stringify(res.data, null, 2)
         })
       },
