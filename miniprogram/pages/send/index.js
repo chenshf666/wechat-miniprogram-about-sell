@@ -69,6 +69,7 @@ Page({
       title: '上传中',
     })
     let thisFile = this
+    let cloudfilePaths = []
     let sucess_count = 0
     const files_num = this.data.filePaths.length
     for(var i = 0; i < files_num; i++){
@@ -78,12 +79,12 @@ Page({
       wx.cloud.uploadFile({
         cloudPath,
         filePath,
-        success: res => { ++sucess_count },
+        success: res => { ++sucess_count;cloudfilePaths = [...cloudfilePaths,res.fileID] },
         complete: () => {
           if(sucess_count == files_num){
             thisFile.onAdd(this.data.input_value,
                            this.data.input_value2,
-                           this.data.filePaths,
+                           cloudfilePaths,
                            app.globalData.userInfo)
           }
           wx.hideLoading()

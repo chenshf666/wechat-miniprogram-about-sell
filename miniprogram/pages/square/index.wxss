@@ -1,6 +1,7 @@
 /* pages/databaseGuide/databaseGuide.wxss */
 
 @import "../../style/guide.wxss";
+@import "../send/index.wxss";
 
 .guide .counter {
   margin-top: 50rpx;
