@@ -4,7 +4,7 @@
     <view class="header">
       <view class="search">
         <image class="icon" src="/images/index/.png"/>
-        <input bindinput="inputSearch" placeholder="输入旧物名称" auto-focus/>
+        <input bindinput="inputSearch" placeholder="请输入旧物名称" auto-focus/>
       </view>
       <button class="yellow {{searchWords.length?'':'disabled'}}" size="mini" hover-class="hover" loading="" plain="" disabled="{{!searchWords.length}}"
       bindtap="doSearch">搜索
