@@ -1,5 +1,6 @@
 //index.js
 const app = getApp()
+var util = require('../../utils/util.js');
 
 Page({
   data: {
@@ -94,13 +95,15 @@ Page({
   onAdd: function (info,info2, url, userInfo) {
     console.log(Date.now())
     const db = wx.cloud.database()
+    var time = util.formatTime(new Date());
     db.collection('square').add({
       data: {
         info:info,
         info2:info2,
         url: url,
         nick:userInfo.nickName,
-        head: userInfo.avatarUrl
+        head: userInfo.avatarUrl,
+        time: time
       },
       success: res => {
         // 在返回结果中会包含新创建的记录的 _id
