@@ -16,6 +16,7 @@ Page({
         openid: app.globalData.openid
       })
     }
+    this.onQuery()
   },
 
   doSearch: function (e) {
@@ -25,8 +26,7 @@ Page({
         $regex: '.*' + e + '.*',
         $options: 'i'
       }
-    }).
-    get({
+    }).get({
       success: res => {
         this.setData({
           result_array:res.data,

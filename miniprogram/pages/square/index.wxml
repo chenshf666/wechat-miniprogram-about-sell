@@ -1,12 +1,12 @@
   <!-- 查询记录 -->
   <view class="guide">
   <view class="header">
-    <button size="mini" type="default" bindtap="onQuery">查询记录</button>
+   
 
 
 		<view class="search">
 			<image class="icon" src="/images/index/icon_search.png"/>
-			<input bindinput="inputSearch" placeholder="输入旧物" auto-focus/>
+			<input bindinput="inputSearch" placeholder="输入旧物名称" auto-focus/>
 		</view>
     <button class="yellow {{searchWords.length?'':'disabled'}}" size="mini" hover-class="hover" loading="" plain="" disabled="{{!searchWords.length}}"
       bindtap="doSearch">搜索

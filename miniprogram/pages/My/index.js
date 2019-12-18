@@ -16,6 +16,7 @@ Page({
         openid: app.globalData.openid
       })
     }
+    this.onQuery()
   },
 
   onQuery: function () {
