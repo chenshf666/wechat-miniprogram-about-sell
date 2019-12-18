@@ -7,7 +7,7 @@ Page({
     openid: '',
     queryResult: '',
     result_array:[],
-    searchWords: ''
+    item_nums : 0
   },
 
   onLoad: function (options) {
@@ -19,32 +19,34 @@ Page({
     this.onQuery()
   },
 
-  doSearch: function (e) {
+  onReachBottom: function () {
     const db = wx.cloud.database()
-    db.collection('square').where({     //实现模糊查询
-      info:{
-        $regex: '.*' + e + '.*',
-        $options: 'i'
-      }
-    }).get({
-      success: res => {
-        this.setData({
-          result_array:res.data,
-          queryResult: JSON.stringify(res.data, null, 2)
-        })
-      },
-      fail: err => {
-        wx.showToast({
-          icon: 'none',
-          title: '查询记录失败'
-        })
-      }
+    wx.showLoading({
+      title: '刷新中！',
+      duration: 1000
     })
+    
+    let x = this.data.item_nums + 20
+    console.log(x)
+    let old_data = this.data.result_array
+    db.collection('square').skip(x) // 限制返回数量为 20 条
+      .get({
+        success: res => {
+          this.setData({
+            result_array: old_data.concat(res.data),
+            item_nums : x,
+            queryResult: JSON.stringify(res.data, null, 2)
+          })
+        },
+        fail: err => {
+          wx.showToast({
+            icon: 'none',
+            title: '查询记录失败'
+          })
+        }
+      })
   },
 
-  inputSearch: function (e) {
-    this.doSearch(e.detail.value)
-  },
 
   doSearch: function (e) {
     const db = wx.cloud.database()
