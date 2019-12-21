@@ -137,6 +137,10 @@ App({
         index: 2,
         text: String(count)
       })
+    else
+      wx.removeTabBarBadge({
+        index: 2
+      })
     
     wx.setStorageSync('roomid2unread_num', this.globalData.roomid2unread_num)
   },
