@@ -14,7 +14,7 @@ Page({
       url: '../My/index',
     })
   },
-  onLoad: function () {
+  onReady: function () {
     // 获取用户信息
     wx.getSetting({
       success: res => {

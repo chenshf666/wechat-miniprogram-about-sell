@@ -1,6 +1,18 @@
 /* pages/databaseGuide/databaseGuide.wxss */
 
 @import "../../style/guide.wxss";
+@import "../../components/chatroom/chatroom.wxss";
+
+.container {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-top: 20rpx;
+  padding-bottom: 30rpx;
+}
 
 .guide .counter {
   margin-top: 50rpx;
