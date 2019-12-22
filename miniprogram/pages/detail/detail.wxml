@@ -16,11 +16,16 @@
 <text class="title">{{title}}</text></view>
 <view class="aaa">
 <text class="zhengwen">{{content}}</text>
-</view>
-            <block wx:for="{{rfilePaths}}" wx:key="*this">
-                <view  data-index="{{index}}" bindtap="previewImage">
-                    <image  src="{{item}}" mode="aspectFill" />
-                </view>
-            </block>
 
-  </view>
+</view>
+<swiper indicator-dots="true"
+  	    autoplay="true"
+  	    interval="true"
+  	    duration="true"
+        interval="3000"
+        class="swiperHome">
+ <swiper-item wx:for="{{rfilePaths}}" wx:key="*this">
+  <image src='{{item}}' mode='widthFix' class='img' />
+ </swiper-item>
+</swiper>
+</view>

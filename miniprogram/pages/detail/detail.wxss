@@ -196,3 +196,11 @@ page {
 .zhengwen {
   font-size: 50rpx;
 }
+
+.img {
+  width: 100%;
+}
+
+.swiperHome {
+  height: 230px;
+}
