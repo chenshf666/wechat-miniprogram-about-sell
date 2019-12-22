@@ -66,14 +66,12 @@ Page({
 
   },
   leaveChat(){
-    const roomid = this.data.roomid
-    app.globalData.roomid2unread_num[roomid] = 0
     app.globalData.inroom = false
     wx.showTabBar()
     this.setData({
-      inroom:false,
-      roomid2unread_num:app.globalData.roomid2unread_num
+      inroom:false
     })
+    app.globalData.roomid2unread_num[roomid] = 0
     app.set_unread_reddot()
   },
   //查询数据库集合openid2groupid里有没有关于房间id的记录，有的话说明已经存在和本人相关对话
