@@ -29,7 +29,7 @@ Page({
     let x = this.data.item_nums + 20
     console.log(x)
     let old_data = this.data.result_array
-    db.collection('square').orderBy('time','desc').skip(x) // 限制返回数量为 20 条 //orderBy('time','desc')
+    db.collection('square').orderBy('time','desc').skip(x) // 限制返回数量为 20 条
       .get({
         success: res => {
           var tmp_array = old_data.concat(res.data)
