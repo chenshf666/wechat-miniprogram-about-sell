@@ -2,7 +2,13 @@
 
 @import "../../style/guide.wxss";
 @import "../send/index.wxss";
-
+.title {
+  font-weight:bold;
+  font-size:50rpx;
+}
+.zhengwen {
+  font-size: 50rpx;
+}
 .guide .counter {
   margin-top: 50rpx;
   display: flex;

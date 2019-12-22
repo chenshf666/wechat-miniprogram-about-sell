@@ -1,6 +1,26 @@
   <!-- 查询记录 -->
-  <view class="guide">
-    <image src="{{url}}" mode="aspectFit" bindtap="onImageTap" data-fileid="{{url}}"></image>
-    <text>{{title}}</text>
-    <text>{{content}}</text>
+  <view calss="container" bindtap="initialize">
+  <view class="userinfo">
+        <button 
+          class="userinfo-avatar"
+          style="background-image: url({{head}})"
+          size="default"
+          bindtap="test"
+        ></button>
+      
+        <view class="userinfo-nickname-wrapper">
+          <button class="userinfo-nickname" bindtap="test">{{nick}}</button>
+        </view>
+      </view>
+      <view class="aaa">
+<text class="title">{{title}}</text></view>
+<view class="aaa">
+<text class="zhengwen">{{content}}</text>
+</view>
+            <block wx:for="{{rfilePaths}}" wx:key="*this">
+                <view  data-index="{{index}}" bindtap="previewImage">
+                    <image  src="{{item}}" mode="aspectFill" />
+                </view>
+            </block>
+
   </view>
