@@ -128,8 +128,9 @@ Page({
             success: res => {
               console.log(res._id)
               app.globalData.roomid = res._id
-              wx.navigateTo({
-                url: '../chat/room',
+              app.globalData.inroom = true
+              wx.switchTab({
+                url: '../room/index'
               })
             },
             fail: err => {
@@ -137,8 +138,9 @@ Page({
           })
         } else {
             app.globalData.roomid = result[0]._id
-            wx.navigateTo({
-              url: '../chat/room',
+            app.globalData.inroom = true
+            wx.switchTab({
+              url: '../room/index'
             })
         }
       },

@@ -1,16 +1,109 @@
   <!-- 查询记录 -->
-  <view class="guide">
-    <view wx:if="{{result_array}}" wx:for="{{result_array}}">
-      <view class="userinfo">
+  <view>
+    <view wx:if="{{!inroom}}" wx:for="{{roomid2record}}">
+      <view class="userinfo" bindtap="toChat" data-roomid="{{index}}">
         <button 
           class="userinfo-avatar"
-          style="background-image: url({{id2userInfo[item._id].head}})"
+          style="background-image: url({{roomid2userInfo[index].head ||'/images/unlogin.jpg'}})"
           size="default"
         ></button>
       
         <view class="userinfo-nickname-wrapper">
-          <button class="userinfo-nickname" bindtap="toChat" data-roomid="{{item._id}}">{{id2userInfo[item._id].nickName || 'Unknown'}}</button>
+          <button class="userinfo-nickname">
+            {{roomid2userInfo[index].nickName || 'Unknown'}}
+           <mp-badge wx:if="{{roomid2unread_num[index] > 0}}" content="{{roomid2unread_num[index]}}" style="margin-left: 5px;"/>
+          </button>
         </view>
+      </view>
+    </view>
+
+  <view class='container' wx:if="{{inroom}}">
+    <view style="width: 100%; height: 100%">
+    <view class="chatroom">
+        <view class="header">
+          <!-- display number of people in the room -->
+          <view class="left" bindtap="leaveChat">
+            <image src="/images/小于号.jpg" style="width: 30rpx;height:30rpx"></image>
+          </view>
+          <!-- room name -->
+          <view class="middle">{{roomid2userInfo[roomid].nickName}}</view>
+          <!-- reserved -->
+          <view class="right"></view>
+        </view>
+
+        <!-- chats -->
+        <scroll-view 
+          class="body" 
+          scroll-y 
+          scroll-with-animation="{{scrollWithAnimation}}"
+          scroll-top="{{scrollTop}}" 
+          scroll-into-view="{{scrollToMessage}}"
+          bindscrolltoupper="onScrollToUpper"
+        >
+          <view 
+            wx:for="{{roomid2record[roomid]}}"
+            wx:key="{{item._id}}"
+            id="item-{{index}}"
+            class="message {{openid == item._openid ? 'message__self' : ''}}"
+          >
+            <image 
+              class="avatar"
+              src="{{item.avatar}}"
+              mode="scaleToFill"
+            ></image> 
+            <view class="main">
+              <view class="nickname">{{item.nickName}}</view>
+              <block wx:if="{{item.msgType === 'image'}}">
+                <view class="image-wrapper">
+                  <view class="loading" wx:if="{{item.writeStatus > -1}}">{{item.writeStatus}}%</view>
+                  <image 
+                    src="{{item.tempFilePath || item.imgFileID}}" 
+                    data-fileid="{{item.tempFilePath || item.imgFileID}}" 
+                    class="image-content" 
+                    style="{{item.imgStyle}}"
+                    mode="scallToFill" 
+                    bindtap="onMessageImageTap"></image>
+                </view>
+              </block>
+              <block wx:else>
+                <view class="text-wrapper">
+                  <view class="loading" wx:if="{{item.writeStatus === 'pending'}}">···</view>
+                  <view class="text-content">{{item.textContent}}</view>
+                </view>
+              </block>
+            </view>
+          </view>
+        </scroll-view>
+
+        <!-- message sender -->
+        <view class="footer">
+          <view class="message-sender" wx:if="{{true}}">
+            <input 
+              class="text-input"
+              type="text"
+              confirm-type="send"
+              bindconfirm="onConfirmSendText"
+              cursor-spacing="20"
+              value="{{textInputValue}}"
+            ></input>
+
+            <image 
+              src="/images/photo.png" 
+              class="btn-send-image" 
+              mode="scaleToFill"
+              bindtap="onChooseImage"
+            ></image>
+          </view>
+
+          <view class="message-sender" wx:if="{{false}}">
+            <button 
+              open-type="getUserInfo" 
+              bindgetuserinfo="onGetUserInfo"
+              class="userinfo"
+            >请先登录后参与聊天</button>
+          </view>
+        </view>
+      </view>
       </view>
     </view>
   </view>
