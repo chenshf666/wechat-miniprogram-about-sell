@@ -10,12 +10,11 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding-top: 20rpx;
-  padding-bottom: 30rpx;
+
 }
 
 .guide .counter {
-  margin-top: 50rpx;
+
   display: flex;
   flex-direction: row;
   align-content: space-between;
@@ -31,10 +30,10 @@ page {
 }
 
 .userinfo, .uploader, .tunnel {
-  margin-top: 40rpx;
+
   height: 140rpx;
   width: 100%;
-  background: #fff;
+  background: rgba(0, 0, 0, 0);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-left: none;
   border-right: none;
@@ -45,7 +44,7 @@ page {
 }
 
 .userinfo {
-  padding-left: 120rpx;
+  padding-left: 20rpx;
 }
 
 .userinfo-avatar {
@@ -54,7 +53,7 @@ page {
   margin: 20rpx;
   border-radius: 50%;
   background-size: cover;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .userinfo-avatar[size] {
@@ -69,7 +68,7 @@ page {
 .userinfo-nickname {
   font-size: 32rpx;
   color: #007aff;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0);
   background-size: cover;
   text-align: left;
   padding-left: 0;

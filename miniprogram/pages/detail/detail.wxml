@@ -1,6 +1,6 @@
   <!-- 查询记录 -->
   <view calss="container" bindtap="initialize">
-  <view class="userinfo">
+    <view class="userinfo">
         <button 
           class="userinfo-avatar"
           style="background-image: url({{head}})"
@@ -11,8 +11,7 @@
         <view class="userinfo-nickname-wrapper">
           <button class="userinfo-nickname" bindtap="test">{{nick}}</button>
         </view>
-      </view>
-      <view class="aaa">
+    </view>
 
 <swiper indicator-dots="true"
   	    autoplay="true"
@@ -24,7 +23,7 @@
   <image src='{{item}}' mode='widthFix' class='img' />
  </swiper-item>
 </swiper>
-
+<view class="aaa">
 <text class="title">{{title}}</text></view>
 <view class="aaa">
 <text class="zhengwen">{{content}}</text>
