@@ -1,14 +1,19 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="uploader">
-    <input placeholder="标题（>=6个字符）" bindinput="updateInputValue">
-    </input>
-  </view>
-  <view class="uploader">
-    <input placeholder="详细描述（选填）" bindinput="updateInputValue2">
-    </input>
-
-
+  <view class="header">
+    <view class="search">
+        
+        <input bindinput="updateInputValue" placeholder="标题（>=4个字符）" auto-focus/>
+      </view>
+      </view>
+  <view class="header">
+    <view class="search">
+      <textarea class="detailText" 
+        placeholder="详细描述（选填）"
+        bindblur="bindTextAreaBlur"
+        value="{{details}}">
+      </textarea>
+    </view>
   </view>
     <view class="weui-uploader">
     <view class="weui-uploader__bd">

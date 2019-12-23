@@ -21,7 +21,7 @@ page {
   flex-direction: column
 }
 .userinfo, .uploader, .tunnel {
-  margin-top: 40rpx;
+  margin-top: 10rpx;
   height: 140rpx;
   width: 100%;
   background: rgba(0,0,0,0);

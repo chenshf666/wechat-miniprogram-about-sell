@@ -90,6 +90,7 @@ Page({
     app.globalData.input2222 = event.currentTarget.dataset.info2;
     app.globalData.nickkkk = event.currentTarget.dataset.nick;
     app.globalData.headddd = event.currentTarget.dataset.head;
+    app.globalData.openidddd = event.currentTarget.dataset.openid;
     wx.navigateTo({
       url: '../detail/detail',
     })

@@ -11,7 +11,8 @@ Page({
     filePaths: [],
     rfilePaths: [],
     head:'',
-    nick:''
+    nick:'',
+    openid:''
   },
 
   /**
@@ -25,7 +26,8 @@ Page({
       title: app.globalData.input1111,
       content: app.globalData.input2222,
       head: app.globalData.headddd,
-      nick: app.globalData.nickkkk
+      nick: app.globalData.nickkkk,
+      openid: app.globalData.openidddd
     })
     const files_num = this.data.filePaths.length
     for (var i = 0; i < files_num; i++) {
@@ -66,7 +68,7 @@ Page({
     
   },
   test: function (event) {
-    const target_openid = event.currentTarget.dataset.openid
+    const target_openid = this.data.openid
     if (target_openid == app.globalData.openid) {
       wx.showToast({
         icon: 'none',

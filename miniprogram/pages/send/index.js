@@ -24,11 +24,14 @@ Page({
       input_value:res.detail.value
     })
   },
-  updateInputValue2: function (res) {
-    this.setData({
-      input_value2: res.detail.value
-    })
+
+  bindTextAreaBlur: function (e) {
+    var that = this;
+    that.setData({
+      input_value2: e.detail.value
+    });
   },
+
   doChoose: function(){
     let thisFile = this
     wx.chooseImage({

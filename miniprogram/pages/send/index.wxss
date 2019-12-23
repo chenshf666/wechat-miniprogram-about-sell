@@ -6,6 +6,44 @@ page {
   flex-direction: column;
   justify-content: flex-start;
 }
+.header .search {
+  -webkit-box-flex: 1;
+	color: #000;
+	font-size: 30rpx;
+	line-height: 40rpx;
+	padding: 10rpx;
+	border-radius: 5rpx;
+	background: #eee;
+}
+
+
+.search {
+  width:95%;
+  align-items: center;
+  margin-left:10rpx; 
+  margin-right:10rpx; 
+  justify-content: center;
+}
+.header {
+	display: -webkit-flex;
+	padding: 20rpx;
+	background: #fff;
+  width:100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.icon {
+	width: 40rpx;
+	height: 40rpx;
+	vertical-align: top;
+  float: left;
+	margin: 1rpx 5rpx 0 0;
+}
+
+
+.detailText {
+  height:140rpx;
+  width: 100%;
+}
 
 .userinfo, .uploader, .tunnel {
   margin-top: 40rpx;

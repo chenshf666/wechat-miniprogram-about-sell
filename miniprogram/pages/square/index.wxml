@@ -24,7 +24,7 @@
         </view>
       </view>
   
-      <image src="{{item.url[0]}}" mode="aspectFit" bindtap="todetail" data-url="{{item.url}}" data-info="{{item.info}}" data-info2="{{item.info2}}" data-head="{{item.head}}" data-nick="{{item.nick}}"></image>
+      <image src="{{item.url[0]}}" mode="aspectFit" bindtap="todetail" data-url="{{item.url}}" data-info="{{item.info}}" data-info2="{{item.info2}}" data-head="{{item.head}}" data-nick="{{item.nick}}" data-openid="{{item._openid}}"></image>
       <text class="title">{{item.info}}</text>
     </view>
   </view>

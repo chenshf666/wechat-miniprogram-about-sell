@@ -13,11 +13,7 @@
         </view>
       </view>
       <view class="aaa">
-<text class="title">{{title}}</text></view>
-<view class="aaa">
-<text class="zhengwen">{{content}}</text>
 
-</view>
 <swiper indicator-dots="true"
   	    autoplay="true"
   	    interval="true"
@@ -28,4 +24,10 @@
   <image src='{{item}}' mode='widthFix' class='img' />
  </swiper-item>
 </swiper>
+
+<text class="title">{{title}}</text></view>
+<view class="aaa">
+<text class="zhengwen">{{content}}</text>
 </view>
+</view>
+
