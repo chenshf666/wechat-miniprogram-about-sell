@@ -99,12 +99,14 @@ page {
   flex: 1;
 }
 
-.uploader, .tunnel {
+.uploader {
   height: auto;
   padding: 0 0 0 40rpx;
   flex-direction: row;
   align-items: flex-start;
   box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
 }
 
 .uploader-text, .tunnel-text {

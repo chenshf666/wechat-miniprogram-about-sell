@@ -11,20 +11,11 @@
       </button>
     </view>
 
-    <view wx:if="{{queryResult}}" wx:for="{{result_array}}">
-      <view class="userinfo">
-        <button 
-          class="userinfo-avatar"
-          style="background-image: url({{item.head}})"
-          size="default"
-        ></button>
-      
-        <view class="userinfo-nickname-wrapper">
-          <button class="userinfo-nickname" bindtap="test" data-openid="{{item._openid}}">{{item.nick}}</button>
-        </view>
-      </view>
-  
+    <view class="xiahuaxian" wx:if="{{queryResult}}" wx:for="{{result_array}}">
+       
+  <text class="title">{{item.info}}</text>
       <image src="{{item.url[0]}}" mode="aspectFit" bindtap="todetail" data-url="{{item.url}}" data-info="{{item.info}}" data-info2="{{item.info2}}" data-head="{{item.head}}" data-nick="{{item.nick}}" data-openid="{{item._openid}}"></image>
-      <text class="title">{{item.info}}</text>
+      <view class="divLine"></view>
+
     </view>
   </view>

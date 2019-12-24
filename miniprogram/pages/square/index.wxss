@@ -2,9 +2,23 @@
 
 @import "../../style/guide.wxss";
 @import "../send/index.wxss";
+.divLine{
+ background: #E0E3DA;
+ width: 100%;
+ height: 5rpx;
+
+}
+
+.xiahuaxian{
+  border-bottom: black;
+
+  padding-bottom: 20rpx;
+  
+}
 .title {
   font-weight:bold;
   font-size:50rpx;
+  border-bottom: black
 }
 .zhengwen {
   font-size: 50rpx;

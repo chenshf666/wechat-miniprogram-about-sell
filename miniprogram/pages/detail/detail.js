@@ -12,7 +12,9 @@ Page({
     rfilePaths: [],
     head:'',
     nick:'',
-    openid:''
+    openid:'',
+    text1:'111',//自己，编辑，别人，联系
+    text2:'22'//自己，删除，别人，收藏
   },
 
   /**

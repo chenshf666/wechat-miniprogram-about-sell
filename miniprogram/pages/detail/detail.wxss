@@ -10,6 +10,14 @@ page {
   flex-direction: column;
   justify-content: flex-start;
 }
+.rrow{
+  flex-direction: row;
+  display: flex;
+  height: 100rpx;
+  position: flexd;
+  bottom: 0;
+}
+
 .aaa{
   flex-direction: column
 }

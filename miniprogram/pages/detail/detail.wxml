@@ -1,32 +1,37 @@
   <!-- 查询记录 -->
   <view calss="container" bindtap="initialize">
     <view class="userinfo">
-        <button 
+      <button 
           class="userinfo-avatar"
           style="background-image: url({{head}})"
           size="default"
           bindtap="test"
-        ></button>
+      ></button>
       
-        <view class="userinfo-nickname-wrapper">
-          <button class="userinfo-nickname" bindtap="test">{{nick}}</button>
-        </view>
+      <view class="userinfo-nickname-wrapper">
+        <button class="userinfo-nickname" bindtap="test">{{nick}}</button>
+      </view>
     </view>
 
-<swiper indicator-dots="true"
+    <swiper indicator-dots="true"
   	    autoplay="true"
   	    interval="true"
   	    duration="true"
         interval="3000"
         class="swiperHome">
- <swiper-item wx:for="{{rfilePaths}}" wx:key="*this">
-  <image src='{{item}}' mode='widthFix' class='img' />
- </swiper-item>
-</swiper>
-<view class="aaa">
-<text class="title">{{title}}</text></view>
-<view class="aaa">
-<text class="zhengwen">{{content}}</text>
-</view>
-</view>
+      <swiper-item wx:for="{{rfilePaths}}" wx:key="*this">
+        <image src='{{item}}' mode='widthFix' class='img' />
+      </swiper-item>
+    </swiper>
+    <view class="aaa">
+      <text class="title">{{title}}</text>
+    </view>
+    <view class="aaa">
+      <text class="zhengwen">{{content}}</text>
+    </view>
+    <view class="rrow" style="position:fixed;bottom:0;width:100%;">
+      <button style="flex:1;background-color:green;">{{text1}}</button>
+      <button style="flex:1;background-color:blue;">{{text2}}</button>
+    </view>
+  </view>
 
