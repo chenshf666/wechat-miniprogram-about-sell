@@ -34,7 +34,9 @@
       <text class="title">{{title}}</text>
     </view>
     <view class="aaa">
-      <text class="zhengwen">{{content}}</text>
+      <p class="zhengwen">{{content}}</p>
+    </view>
+    <view style="bottom:0;width:100%;height:100rpx">
     </view>
     <view class="rrow" style="position:fixed;bottom:0;width:100%;">
       <button style="flex:1;background-color:green;">{{text1}}</button>

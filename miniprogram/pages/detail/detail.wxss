@@ -127,6 +127,7 @@ page {
 }
 .zhengwen {
   font-size: 50rpx;
+  word-break: keep-all;word-wrap: break-word;white-space: pre-line;
 }
 
 .img {
