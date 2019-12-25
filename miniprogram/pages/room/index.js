@@ -19,7 +19,6 @@ Page({
     roomid2unread_num:0
   },
   updateDataFromApp(){
-    console.log('What the hell?')
     this.setData({
       roomid2record:app.globalData.roomid2record,
       roomid2userInfo:app.globalData.roomid2userInfo,
