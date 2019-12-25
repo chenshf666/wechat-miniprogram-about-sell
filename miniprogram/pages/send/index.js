@@ -10,7 +10,7 @@ Page({
     takeSession: false,
     requestResult: '',
     input_value:'主题',
-    input_value2:'内容',
+    input_value2:'',
     imageChoose: false,
     imageUrl:'',
     filePaths:[],//'选择的图片列表',
@@ -134,5 +134,10 @@ Page({
     this.setData({
         filePaths: files
     })
+  },
+  hideGallery(){
+    this.setData({
+      showPreview: false
+  });
   }
 })
