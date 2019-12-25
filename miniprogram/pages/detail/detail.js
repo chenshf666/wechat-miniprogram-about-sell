@@ -148,9 +148,15 @@ Page({
     
   },
   onImageTap(e) {
+    console.log(e)
+    this.setData({
+      show:true,
+      currentIndex: e.currentTarget.dataset.index
+    })
+    /*
     wx.previewImage({
       urls: [e.target.dataset.fileid],
-    })
+    })*/
   },
 
   /**

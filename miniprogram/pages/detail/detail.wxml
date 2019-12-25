@@ -20,9 +20,16 @@
         interval="3000"
         class="swiperHome">
       <swiper-item wx:for="{{rfilePaths}}" wx:key="*this">
-        <image src='{{item}}' mode='widthFix' class='img' />
+        <image src='{{item}}' mode='widthFix' class='img' bindtap='onImageTap' data-index="{{index}}"/>
       </swiper-item>
     </swiper>
+    <mp-gallery 
+      hide-on-click="{{true}}" 
+      showDelete="{{false}}"
+      show="{{show}}"
+      img-urls="{{rfilePaths}}" 
+      current="{{currentIndex}}">
+    </mp-gallery>
     <view class="aaa">
       <text class="title">{{title}}</text>
     </view>
