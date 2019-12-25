@@ -1,7 +1,5 @@
 /* pages/databaseGuide/databaseGuide.wxss */
 
-@import "../../style/guide.wxss";
-@import "../send/index.wxss";
 .divLine{
  background: #E0E3DA;
  width: 100%;
