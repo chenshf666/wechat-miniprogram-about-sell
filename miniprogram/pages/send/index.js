@@ -51,7 +51,7 @@ Page({
       }
     })
   },
-  doSend: function(){
+  async doSend(){
     if(!app.globalData.logged){
       wx.showToast({
         icon: 'none',
@@ -79,22 +79,13 @@ Page({
       const filePath = this.data.filePaths[i]
       const cloudPath = 'square/' + Date.now() + app.globalData.openid 
                           + i + filePath.match(/\.[^.]+?$/)[0]
-      wx.cloud.uploadFile({
-        cloudPath,
-        filePath,
-        success: res => { ++sucess_count;cloudfilePaths = [...cloudfilePaths,res.fileID] },
-        complete: () => {
-          if(sucess_count == files_num){
-            thisFile.onAdd(this.data.input_value,
-                           this.data.input_value2,
-                           cloudfilePaths,
-                           app.globalData.userInfo)
-          }
-          wx.hideLoading()
-        }
-      })
+      const res = await wx.cloud.uploadFile({cloudPath,filePath})
+      cloudfilePaths = [...cloudfilePaths,res.fileID]
     }
-    
+    this.onAdd(this.data.input_value,
+      this.data.input_value2,
+      cloudfilePaths,
+      app.globalData.userInfo)
   },
   onAdd: function (info,info2, url, userInfo) {
     console.log(Date.now())

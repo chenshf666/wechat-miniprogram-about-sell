@@ -16,7 +16,7 @@
     <swiper indicator-dots="true"
   	    autoplay="true"
   	    interval="true"
-  	    duration="true"
+  	    duration="1000"
         interval="3000"
         class="swiperHome">
       <swiper-item wx:for="{{rfilePaths}}" wx:key="*this">
