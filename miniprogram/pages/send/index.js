@@ -55,14 +55,14 @@ Page({
     if(!app.globalData.logged){
       wx.showToast({
         icon: 'none',
-        title: '你妈的先登录'
+        title: '请先登录'
       })
       return
     }
-    if(this.data.input_value.length <= 3 || !this.data.imageUrl){
+    if(this.data.input_value.length <= 3 || this.data.filePaths.length < 1){
       wx.showToast({
         icon: 'none',
-        title: '龟龟哟，先输入4个以上字符和选择图片行不'
+        title: '请先输入4个以上字符和选择图片'
       })
       return
     }

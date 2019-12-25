@@ -11,7 +11,8 @@
       <textarea class="detailText" 
         placeholder="详细描述（选填）"
         bindblur="bindTextAreaBlur"
-        value="{{details}}">
+        value="{{details}}"
+        maxlength="999">
       </textarea>
     </view>
   </view>
