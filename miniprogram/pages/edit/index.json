@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "mp-uploader": "../components/uploader/uploader",
+    "mp-cells": "../components/cells/cells",
+    "mp-cell": "../components/cell/cell",
+    "mp-gallery": "../components/gallery/gallery"
+  }
+}

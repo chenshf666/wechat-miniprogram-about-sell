@@ -137,3 +137,14 @@ page {
 .swiperHome {
   height: 230px;
 }
+
+.detail_button {
+  position:fixed;
+  bottom:0;
+  width:100%;
+}
+
+.edit_button {
+  flex:1;
+  background-color:green;
+}

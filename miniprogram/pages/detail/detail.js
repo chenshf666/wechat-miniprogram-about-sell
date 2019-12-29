@@ -13,6 +13,7 @@ Page({
     head:'',
     nick:'',
     openid:'',
+    item_id:0,
     text1:'111',//自己，编辑，别人，联系
     text2:'22'//自己，删除，别人，收藏
   },
@@ -21,7 +22,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
     this.setData({
       filePaths : app.globalData.picccc,
       rfilePaths: app.globalData.picccc,
@@ -29,8 +29,21 @@ Page({
       content: app.globalData.input2222,
       head: app.globalData.headddd,
       nick: app.globalData.nickkkk,
-      openid: app.globalData.openidddd
+      openid: app.globalData.openidddd,
+      item_id: app.globalData.item_id,
     })
+    console.log(app.globalData.item_id)
+    if (app.globalData.openid == this.data.openid) {
+      this.setData({
+        text1:'编辑',
+        text2:'删除'
+      })
+    } else {
+      this.setData({
+        text1:'联系',
+        text2:'收藏'
+      })
+    }
     const files_num = this.data.filePaths.length
     for (var i = 0; i < files_num; i++) {
       this.data.rfilePaths[i] = this.data.filePaths[files_num - i - 1]
@@ -159,10 +172,39 @@ Page({
     })*/
   },
 
+  firstbutton: function() {
+    if (app.globalData.openid == this.data.openid) {
+      // 自己上传的，编辑
+      wx.navigateTo({
+        url: '../edit/index',
+      })
+    } 
+    else { // 别人上传的商品，联系
+      this.test()
+    }
+  }, 
+
+  secondbutton: function() {
+    if (app.globalData.openid == this.data.openid) {
+      // 自己上传的，删除
+      //console.log(this.data.item_id)
+      wx.cloud.callFunction({
+        name:'remove',
+        data: {item_id:this.data.item_id}
+      })
+      wx.showToast({
+        title: '删除成功',
+      })
+    } 
+    else { // 别人上传的商品，收藏
+     
+    }
+  },
+
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
     
-  }
+  },
 })

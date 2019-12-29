@@ -1,0 +1,51 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="search">
+        
+        <input value = "{{input_value}}" bindinput="updateInputValue"/>
+      </view>
+      </view>
+  <view class="header" wx:if="{{!showPreview}}">
+    <view class="search">
+      <textarea class="detailText" 
+        placeholder="详细描述（选填）"
+        bindblur="bindTextAreaBlur"
+        value="{{input_value2}}"
+        maxlength="999"
+        >
+      </textarea>
+    </view>
+  </view>
+    <view class="weui-uploader">
+    <view class="weui-uploader__bd">
+        <view class="weui-uploader__files">
+            <block wx:for="{{filePaths}}" wx:key="*this">
+                <view class="weui-uploader__file" data-index="{{index}}" bindtap="previewImage">
+                    <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                </view>
+            </block>
+            
+        </view>
+        <view wx:if="{{filePaths.length < max_count}}" class="weui-uploader__input-box">
+            <view class="weui-uploader__input" bindtap="doChoose"></view>
+        </view>
+    </view>
+  </view>
+  <mp-gallery 
+    hide-on-click="{{true}}"
+    bindhide = "hideGallery" 
+    show-delete="{{true}}" 
+    show="{{showPreview}}" 
+    binddelete="deletePic" 
+    img-urls="{{filePaths}}" 
+    current="{{previewCurrent}}">
+  </mp-gallery>
+  
+
+  <view class="uploader">
+    <view class="uploader-text" bindtap="doSend">
+      <text>上传</text>
+    </view>
+  </view>
+</view>

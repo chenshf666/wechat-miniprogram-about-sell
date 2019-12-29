@@ -168,6 +168,7 @@ App({
       newroomids : [],
       roomid2openid : {},
       roomid2userInfo : {},
+      item_id: 0, // 商品的openid，用于详情页删除
       roomid2record:wx.getStorageSync('roomid2record')||{},
       roomid2unread_num: wx.getStorageSync('roomid2unread_num')||{},
       unreadnum:0
