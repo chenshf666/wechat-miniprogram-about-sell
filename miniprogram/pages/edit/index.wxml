@@ -10,7 +10,7 @@
     <view class="search">
       <textarea class="detailText" 
         placeholder="详细描述（选填）"
-        bindblur="bindTextAreaBlur"
+        bindinput="bindTextAreaBlur"
         value="{{input_value2}}"
         maxlength="999"
         >

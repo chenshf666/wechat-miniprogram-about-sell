@@ -35,8 +35,8 @@ Page({
   },
 
   bindTextAreaBlur: function (e) {
-    var that = this;
-    that.setData({
+    //var that = this;
+    this.setData({
       input_value2: e.detail.value
     });
   },
@@ -97,7 +97,7 @@ Page({
             info2:this.data.input_value2
     }
   })
-  console.log(this.data.input_value)
+  console.log(this.data.input_value2)
   wx.showToast({
     title: '更新成功',
   })

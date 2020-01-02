@@ -4,6 +4,6 @@
     <view wx:if="{{queryResult}}" wx:for="{{result_array}}">
       <view class="del" bindtap="onRemove" data-id="{{item._id}}" data-fileid="{{item.url}}">删除</view>
       <text>{{item.info}}</text>
-      <image src="{{item.url[0]}}" mode="aspectFit"></image>
+      <image src="{{item.url[0]}}" bindtap="todetail" mode="aspectFit" data-url="{{item.url}}" data-info="{{item.info}}" data-info2="{{item.info2}}" data-head="{{item.head}}" data-nick="{{item.nick}}" data-openid="{{item._openid}}" data-itemid="{{item._id}}"></image>
     </view>
   </view>

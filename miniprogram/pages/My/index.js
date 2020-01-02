@@ -76,6 +76,19 @@ Page({
         // ...
       }
     })
-  }
+  }, 
+  todetail:function(event){
+    const first=event.currentTarget.dataset.url.length-1
+    app.globalData.picccc = event.currentTarget.dataset.url;
+    app.globalData.input1111 = event.currentTarget.dataset.info;
+    app.globalData.input2222 = event.currentTarget.dataset.info2;
+    app.globalData.nickkkk = event.currentTarget.dataset.nick;
+    app.globalData.headddd = event.currentTarget.dataset.head;
+    app.globalData.openidddd = event.currentTarget.dataset.openid;
+    app.globalData.item_id = event.currentTarget.dataset.itemid;
+    wx.navigateTo({
+      url: '../detail/detail',
+    })
+  },
 
 })
