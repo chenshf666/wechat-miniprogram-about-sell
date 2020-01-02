@@ -1,5 +1,6 @@
 /* pages/databaseGuide/databaseGuide.wxss */
 
+
 .divLine{
  background: #E0E3DA;
  width: 100%;
@@ -10,13 +11,12 @@
 .xiahuaxian{
   border-bottom: black;
 
-  padding-bottom: 20rpx;
-  
 }
 .title {
   font-weight:bold;
   font-size:50rpx;
-  border-bottom: black
+  margin: 30rpx;
+  border-bottom: black;
 }
 .zhengwen {
   font-size: 50rpx;

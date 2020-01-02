@@ -39,8 +39,8 @@
     <view style="bottom:0;width:100%;height:100rpx">
     </view>
     <view class="rrow" style="position:fixed;bottom:0;width:100%;">
-      <button bindtap="firstbutton" style="flex:1;background-color:green;">{{text1}}</button>
-      <button bindtap="secondbutton" style="flex:1;background-color:blue;">{{text2}}</button>
+      <button bindtap="firstbutton" style="flex:1;background-color:white;">{{text1}}</button>
+      <button bindtap="secondbutton" style="flex:1;background-color:white;">{{text2}}</button>
     </view>
   </view>
 
