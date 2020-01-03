@@ -23,7 +23,7 @@
         <view class="header">
           <!-- display number of people in the room -->
           <view class="left" bindtap="leaveChat">
-            <image src="/images/小于号.jpg" style="width: 30rpx;height:30rpx"></image>
+            <text style="font-size:50rpx">{{"<"}}</text>
           </view>
           <!-- room name -->
           <view class="middle">{{roomid2userInfo[roomid].nickName}}</view>
