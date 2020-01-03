@@ -126,7 +126,7 @@ page {
   font-size:50rpx;
 }
 .zhengwen {
-  font-size: 50rpx;
+  font-size: 45rpx;
   word-break: keep-all;word-wrap: break-word;white-space: pre-line;
 }
 

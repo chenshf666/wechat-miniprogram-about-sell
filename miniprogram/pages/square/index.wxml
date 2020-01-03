@@ -13,7 +13,7 @@
 
     <view class="xiahuaxian" wx:if="{{queryResult}}" wx:for="{{result_array}}">
       <text class="title">{{item.info}}</text>
-      <image src="{{item.url[0]}}" mode="aspectFit" bindtap="todetail" data-url="{{item.url}}" data-info="{{item.info}}" data-info2="{{item.info2}}" data-head="{{item.head}}" data-nick="{{item.nick}}" data-openid="{{item._openid}}" data-itemid="{{item._id}}"></image>
+      <image src="{{item.url[0]}}" mode="aspectFit" bindtap="todetail" data-url="{{item.url}}" data-info="{{item.info}}" data-info2="{{item.info2}}" data-head="{{item.head}}" data-nick="{{item.nick}}" data-openid="{{item._openid}}" data-itemid="{{item._id}}" style="width:100%;"></image>
       <view class="divLine"></view>
     </view>
   </view>
